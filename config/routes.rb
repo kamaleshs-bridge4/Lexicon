@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   # get "/topics", to: "topics#index"
   # get "/topics/:id", to: "topics#show"
 
-  resources :topics
+  resources :topics do
+    resources :comments
+  end
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
